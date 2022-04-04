@@ -1,16 +1,14 @@
+// 34. Executing Functions Indirectly
+
 const defaultResult = 0;
 let currentResult = defaultResult;
+let result;
 
-function add(num1, num2) {
-   const result = num1 + num2;
-   return result;
+function add() {
+   currentResult = userInput.value;
+   outputResult(currentResult, currentResult);
+   userInput.value = '';
+   userInput.focus();
 }
 
-let compute = add(4, 4);
-console.log(compute);
-
-// currentResult = ((currentResult + 10) * 3) / 2 - 1;
-
-// let calculationDescription = `( ${defaultResult} + 10)* 3 / 2 - 1`;
-
-// outputResult(currentResult, calculationDescription);
+addBtn.addEventListener('click', add);
